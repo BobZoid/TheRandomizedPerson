@@ -6,6 +6,13 @@ public class UnPerson {
     private String profession;
     private String hobby;
 
+    @Override
+    public String toString() {
+        return firstName + " is " + age +
+                " years old and works as a " + profession + ". When free" + firstName +
+                " likes to spend their time "+ hobby;
+    }
+
     public String getFirstName() {
         return firstName;
     }
