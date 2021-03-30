@@ -9,8 +9,8 @@ public class UnPerson {
     @Override
     public String toString() {
         return firstName + " is " + age +
-                " years old and works as a " + profession + ". When free" + firstName +
-                " likes to spend their time "+ hobby;
+                " years old and works as a " + profession + ". " + firstName +
+                "s biggest hobby is "+ hobby + ".";
     }
 
     public String getFirstName() {
