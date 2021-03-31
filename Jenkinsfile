@@ -13,6 +13,7 @@ pipeline {
         stage('Package') {
             steps {
                 sh 'mvn package'
+                sh 'docker build .'
             }
             post {
                 success {
