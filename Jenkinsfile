@@ -1,9 +1,8 @@
 pipeline {
     tools {
         maven "maven"
-        dockerTool "docker"
     }
-    agent { dockerfile true }
+    agent any
 
     stages {
         stage('Build') {
@@ -15,7 +14,6 @@ pipeline {
         stage('Package') {
             steps {
                 sh 'mvn package'
-                sh 'docker build .'
             }
             post {
                 success {
