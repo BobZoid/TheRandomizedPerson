@@ -1,7 +1,7 @@
 pipeline {
     tools {
         maven "maven"
-        dockerTool null
+        docker "docker"
     }
     agent { dockerfile true }
 
