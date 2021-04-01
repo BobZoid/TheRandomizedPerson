@@ -2,7 +2,7 @@ pipeline {
     tools {
         maven "maven"
     }
-    agent { dockerfile true }
+    agent any
 
     stages {
         stage('Build') {
