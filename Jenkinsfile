@@ -2,7 +2,7 @@ pipeline {
     tools {
         maven "maven"
     }
-    agent { dockerfile true }
+    agent any
 
     stages {
         stage('Build') {
@@ -14,7 +14,12 @@ pipeline {
         stage('Package') {
             steps {
                 sh 'mvn package'
-                sh 'docker build .'
+                node {
+                    git '…'
+                    def newApp = docker.build "bobzoid/random-person:${env.BUILD_TAG}"
+                    newApp.push()
+                }
+
             }
             post {
                 success {
