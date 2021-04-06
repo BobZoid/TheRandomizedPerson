@@ -1,7 +1,6 @@
 pipeline {
     tools {
         maven "Maven 3.6.3"
-        dockerTool 'Docker'
     }
     agent any
 
@@ -18,8 +17,8 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USER', passwordVariable: 'PASS')])
                         {
                             sh 'docker login -u $USER -p $PASS'
-                            sh 'docker build -t bobzoid/the-random-person:1.2 .'
-                            sh 'docker push bobzoid/the-random-person:1.2'
+                            sh 'docker build -t bobzoid/the-random-person:2.0 .'
+                            sh 'docker push bobzoid/the-random-person:2.0'
                         }
 
             }
