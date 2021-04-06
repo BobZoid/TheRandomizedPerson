@@ -18,8 +18,8 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USER', passwordVariable: 'PASS')])
                         {
                             sh 'docker login -u $USER -p $PASS'
-                            sh 'docker build -t bobzoid/the-random-person:1.1 .'
-                            sh 'docker push bobzoid/the-random-person:1.1'
+                            sh 'docker build -t bobzoid/the-random-person:1.2 .'
+                            sh 'docker push bobzoid/the-random-person:1.2'
                         }
 
             }
