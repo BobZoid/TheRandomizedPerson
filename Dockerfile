@@ -1,7 +1,3 @@
-FROM maven:3.6.3-openjdk-11-slim
-
-COPY ./ ./
-
-RUN mvn clean package
-
-CMD ["java", "-jar", "target/TheRandomizedPerson-2.0.jar"]
+FROM openjdk:11-jre-slim
+ADD target/TheRandomizedPerson-2.0.jar /TheRandomizedPerson-2.0.jar
+CMD java -jar /TheRandomizedPerson-2.0.jar
